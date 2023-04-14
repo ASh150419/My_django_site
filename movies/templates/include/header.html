@@ -1,0 +1,49 @@
+<div class="main-banner bg bg1" id="home">
+    <!-- header -->
+    <header class="header">
+        <div class="container-fluid px-lg-5">
+            <!-- nav -->
+            <nav class="py-4">
+                <div id="logo">
+                    <h1> <a href="index.html" class="editContent" style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(0, 0, 0); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif;">
+                        FilmGo</a></h1>
+                </div>
+                <ul class="menu mt-2">
+                    <li class="active"><a href="index.html">Главная</a></li>
+                        {% if user.is_authenticated %}
+                        <span>{{ user.username }}</span>
+                        <a href="{% url 'account_logout' %}"
+                           style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase;">
+                            Выход
+                        </a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}"
+                           style="color: rgb(0, 0, 20055); font-weight: 700; text-transform: uppercase;">
+                            Вход
+                        </a>
+                         <a href="{% url 'account_signup' %}"
+                           style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase;">
+                            Регистрация
+                        </a>
+                    {% endif %}
+                </li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+    <!-- //header -->
+    <!--/banner-->
+    <div class="banner-info">
+        <p class="editContent" >Сайт с лучшей статикой</p>
+        <h3 class="mb-4 editContent">Все о кино</h3>
+        <div class="ban-buttons">
+        </div>
+    </div>
+    <!--// banner-inner -->
+</div>
+<ol class="breadcrumb editContent">
+    <li class="breadcrumb-item">
+        <a href="index.html" class="editContent">Home</a>
+    </li>
+</ol>
